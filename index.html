@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galaxy Calculator</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <main class="stage">
+    <div class="smoke-layer">
+      <canvas id="smoke-bg-1" class="smoke-canvas"></canvas>
+      <canvas id="smoke-bg-2" class="smoke-canvas"></canvas>
+      <canvas id="smoke-bg-3" class="smoke-canvas"></canvas>
+    </div>
+
+    <section class="calculator-container">
+      <div class="calc-smoke-layer">
+        <canvas id="calc-smoke-1" class="calc-smoke"></canvas>
+        <canvas id="calc-smoke-2" class="calc-smoke"></canvas>
+        <canvas id="calc-smoke-3" class="calc-smoke"></canvas>
+      </div>
+
+      <div class="calculator" aria-label="Cool Calculator">
+        <div class="screen" id="screen">0</div>
+        <div class="keypad">
+          <button class="btn wide btn-ac" data-action="all-clear">AC</button>
+          <button class="btn" data-action="back">⌫</button>
+          <button class="btn op" data-value="/">÷</button>
+          <button class="btn" data-value="7">7</button>
+          <button class="btn" data-value="8">8</button>
+          <button class="btn" data-value="9">9</button>
+          <button class="btn op" data-value="*">×</button>
+          <button class="btn" data-value="4">4</button>
+          <button class="btn" data-value="5">5</button>
+          <button class="btn" data-value="6">6</button>
+          <button class="btn op" data-value="-">−</button>
+          <button class="btn" data-value="1">1</button>
+          <button class="btn" data-value="2">2</button>
+          <button class="btn" data-value="3">3</button>
+          <button class="btn op" data-value="+">+</button>
+          <button class="btn" data-value="0">0</button>
+          <button class="btn" data-value=".">.</button>
+          <button class="btn" data-action="percent">%</button>
+          <button class="btn equals" data-action="equals">=</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="credit">Built with 💜 — Galaxy Smoke</footer>
+  </main>
+
+  <!-- Load modules -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+/* ===============================
+   GLOBAL RESET & BASE STYLES
+   =============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, #050518, #000010);
+  color: #fff;
+}
+
+/* ===============================
+   MAIN STAGE
+   =============================== */
+.stage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ===============================
+   SMOKE LAYERS
+   =============================== */
+.smoke-layer, .calc-smoke-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.smoke-canvas, .calc-smoke {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Optional overlay for cosmic depth */
+.smoke-layer::after, .calc-smoke-layer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(30,30,60,0.3), rgba(10,10,20,0.85));
+  mix-blend-mode: multiply;
+}
+
+/* ===============================
+   CALCULATOR CONTAINER
+   =============================== */
+.calculator-container {
+  position: relative;
+  width: 360px;
+  max-width: 92vw;
+  aspect-ratio: 9/13;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(180, 150, 255, 0.3),
+              inset 0 0 20px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px) saturate(140%);
+  z-index: 2;
+}
+
+/* ===============================
+   CALCULATOR PANEL
+   =============================== */
+.calculator {
+  width: 100%;
+  height: 100%;
+  padding: 18px;
+  position: relative;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ===============================
+   SCREEN
+   =============================== */
+.screen {
+  height: 60px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 12px;
+  padding: 10px 15px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
+  overflow-x: auto;
+}
+
+/* ===============================
+   KEYPAD
+   =============================== */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 15px;
+}
+
+/* ===============================
+   BUTTONS
+   =============================== */
+.btn {
+  padding: 18px 0;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 8px rgba(255,255,255,0.1);
+}
+
+.btn:hover {
+  background: rgba(255,255,255,0.15);
+  transform: scale(1.05);
+}
+
+.btn.op {
+  background: rgba(148,0,211,0.5);
+}
+
+.btn.op:hover {
+  background: rgba(148,0,211,0.7);
+}
+
+.btn.equals {
+  background: #00f0ff;
+  color: #000;
+  font-weight: bold;
+}
+
+.btn.equals:hover {
+  background: #00c8cc;
+}
+
+.btn.wide {
+  grid-column: span 2;
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+.credit {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
+  width: 100%;
+  z-index: 10;
+}
